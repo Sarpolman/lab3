@@ -1,0 +1,13 @@
+/home/artyom/c#projects/lab3/bin/Debug/netcoreapp3.1/lab3
+/home/artyom/c#projects/lab3/bin/Debug/netcoreapp3.1/lab3.deps.json
+/home/artyom/c#projects/lab3/bin/Debug/netcoreapp3.1/lab3.runtimeconfig.json
+/home/artyom/c#projects/lab3/bin/Debug/netcoreapp3.1/lab3.runtimeconfig.dev.json
+/home/artyom/c#projects/lab3/bin/Debug/netcoreapp3.1/lab3.dll
+/home/artyom/c#projects/lab3/bin/Debug/netcoreapp3.1/lab3.pdb
+/home/artyom/c#projects/lab3/obj/Debug/netcoreapp3.1/lab3.csprojAssemblyReference.cache
+/home/artyom/c#projects/lab3/obj/Debug/netcoreapp3.1/lab3.AssemblyInfoInputs.cache
+/home/artyom/c#projects/lab3/obj/Debug/netcoreapp3.1/lab3.AssemblyInfo.cs
+/home/artyom/c#projects/lab3/obj/Debug/netcoreapp3.1/lab3.csproj.CoreCompileInputs.cache
+/home/artyom/c#projects/lab3/obj/Debug/netcoreapp3.1/lab3.dll
+/home/artyom/c#projects/lab3/obj/Debug/netcoreapp3.1/lab3.pdb
+/home/artyom/c#projects/lab3/obj/Debug/netcoreapp3.1/lab3.genruntimeconfig.cache
