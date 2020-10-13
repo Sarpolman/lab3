@@ -17,27 +17,30 @@ namespace lab3
         int maxX;
         int maxY;
 
+        int maxZ;
+
         IMatrixCheckEmpty<T> checkEmpty;
 
-        public Matrix(int px, int py, IMatrixCheckEmpty<T> checkEmptyParam)
+        public Matrix(int px, int py,int pz, IMatrixCheckEmpty<T> checkEmptyParam)
         {
             this.maxX = px;
             this.maxY = py;
+            this.maxZ = pz;
             this.checkEmpty = checkEmptyParam;
         }
 
-        public T this[int x, int y]
+        public T this[int x, int y, int z]
         {
             set
             {
-                CheckBounds(x,y);
-                string key =DictKey(x,y);
+                CheckBounds(x,y,z);
+                string key =DictKey(x,y,z);
                 this._matrix.Add(key,value);
             }
             get
             {
-                CheckBounds(x,y);
-                string key = DictKey(x,y);
+                CheckBounds(x,y,z);
+                string key = DictKey(x,y,z);
                 if (this._matrix.ContainsKey(key))
                 {
                     return this._matrix[key];
@@ -50,7 +53,7 @@ namespace lab3
             }
         }
 
-            void CheckBounds(int x, int y)
+            void CheckBounds(int x, int y, int z)
         {
             if(x<0 || x>=this.maxX)
             {
@@ -59,37 +62,45 @@ namespace lab3
             
             if(y<0 || y>=this.maxY)
             {
-                throw new ArgumentOutOfRangeException("y","y="+x+" выходит за границы");
+                throw new ArgumentOutOfRangeException("y","y="+y+" выходит за границы");
+            }
+
+            if(z<0 || z>=this.maxZ)
+            {
+                throw new ArgumentOutOfRangeException("z","z="+z+" выходит за границы");
             }
         }
 
-        string DictKey(int x, int y)
+        string DictKey(int x, int y,int z)
         {
-            return x.ToString() + "_" + y.ToString();
+            return x.ToString() + "_" + y.ToString()+ "_" + z.ToString();
         }
 
         public override string ToString()
         {
             StringBuilder b =new StringBuilder();
-            for (int j=0; j< this.maxX; j++)
-            {
-                b.Append("[");
-                for (int i=0; i< this.maxX; i++)
+            for(int k=0; k<this.maxZ;k++){
+                for (int j=0; j< this.maxX; j++)
                 {
-                    if (i>0)
+                    b.Append("[");
+                    for (int i=0; i< this.maxX; i++)
                     {
-                        b.Append("\t");
+                        if (i>0)
+                        {
+                            b.Append("\t");
+                        }
+                        if (!this.checkEmpty.checkEmptyElement(this[i,j,k]))
+                        {
+                            b.Append(this[i,j,k].ToString());
+                        }
+                        else
+                        {
+                            b.Append("-");
+                        }
                     }
-                    if (!this.checkEmpty.checkEmptyElement(this[i,j]))
-                    {
-                        b.Append(this[i,j].ToString());
-                    }
-                    else
-                    {
-                        b.Append("-");
-                    }
+                    b.Append("]\n");
                 }
-                b.Append("]\n");
+                b.Append("\n");
             }
             return b.ToString();
         }

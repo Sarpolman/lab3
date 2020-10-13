@@ -121,11 +121,11 @@ namespace lab3
             }
 
             System.Console.WriteLine("\nМатрица");
-            Matrix <GeomFigure> matrix = new Matrix<GeomFigure>(3,3,new GeomFigureMatrixCheckEmpty());
+            Matrix <GeomFigure> matrix = new Matrix<GeomFigure>(3,3,3,new GeomFigureMatrixCheckEmpty());
 
-            matrix[0, 0] = rectangle;
-            matrix[1,1] = square;
-            matrix[2,2]=circle;
+            matrix[0, 0,0] = rectangle;
+            matrix[1,1,1] = square;
+            matrix[2,2,2]=circle;
             System.Console.WriteLine(matrix.ToString());
 
         }
