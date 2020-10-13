@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -104,6 +105,21 @@ namespace lab3
             Rectangle rectangle=new Rectangle(2,5);
             Square square=new Square(4);
             Circle circle =new Circle(4);
+
+            System.Console.WriteLine("\nArrayList");
+            ArrayList arrayList= new ArrayList();
+            arrayList.Add(circle);
+            arrayList.Add(rectangle);
+            arrayList.Add(square);
+            foreach (GeomFigure o in arrayList){
+                Console.WriteLine(o.ToString());
+            }
+
+            System.Console.WriteLine("\nСорт.ArrayList");
+            arrayList.Sort();
+            foreach (GeomFigure o in arrayList){
+                Console.WriteLine(o.ToString());
+            }
 
             System.Console.WriteLine("\nЛист");
             List<GeomFigure> FiguresList=new List<GeomFigure>();
