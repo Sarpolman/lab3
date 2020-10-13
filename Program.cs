@@ -55,18 +55,41 @@ namespace lab3
 
             System.Console.WriteLine( "\nSimpleList");
             SimpleList<GeomFigure> simpleList = new SimpleList<GeomFigure>();
+
             simpleList.Add(circle);
             simpleList.Add(rectangle);
             simpleList.Add(square);
+
             foreach(var x in simpleList)
             {
                 System.Console.WriteLine(x);
             }
+
             System.Console.WriteLine("\nСорт.SimpleList");
             simpleList.Sort();
             foreach(var x in simpleList)
             {
                 System.Console.WriteLine(x);
+            }
+            
+            System.Console.WriteLine("\nSimpleStack");
+            SimpleStack<GeomFigure> simplestack = new SimpleStack<GeomFigure>();
+
+            simplestack.push(circle);
+            simplestack.push(rectangle);
+            simplestack.push(square);
+
+            foreach(var x in simplestack)
+            {
+                System.Console.WriteLine(x);
+            }
+
+            System.Console.WriteLine("\nSimpleStack popping out");
+
+            while (simplestack.Count > 0)
+            {
+                GeomFigure f = simplestack.pop();
+                Console.WriteLine(f);
             }
         }
     }

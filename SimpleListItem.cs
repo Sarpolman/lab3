@@ -12,7 +12,5 @@ public class SimpleListItem<T>{
         public SimpleListItem(T param){
             this.data=param;
         }
-
-
     }
 }
