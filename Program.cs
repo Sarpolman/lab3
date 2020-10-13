@@ -104,6 +104,8 @@ namespace lab3
             Rectangle rectangle=new Rectangle(2,5);
             Square square=new Square(4);
             Circle circle =new Circle(4);
+
+            System.Console.WriteLine("\nЛист");
             List<GeomFigure> FiguresList=new List<GeomFigure>();
             FiguresList.Add(circle);
             FiguresList.Add(rectangle);
@@ -111,10 +113,20 @@ namespace lab3
             foreach (GeomFigure o in FiguresList){
                 Console.WriteLine(o.ToString());
             }
+
+            System.Console.WriteLine("\nСорт.Лист");
             FiguresList.Sort();
             foreach (GeomFigure o in FiguresList){
                 Console.WriteLine(o.ToString());
             }
+
+            System.Console.WriteLine("\nМатрица");
+            Matrix <GeomFigure> matrix = new Matrix<GeomFigure>(3,3,new GeomFigureMatrixCheckEmpty());
+
+            matrix[0, 0] = rectangle;
+            matrix[1,1] = square;
+            matrix[2,2]=circle;
+            System.Console.WriteLine(matrix.ToString());
 
         }
     }
