@@ -54,8 +54,8 @@ namespace lab3{
         public T Get(int number){
             return GetItem(number).data;
         }
-        System.Collections.IEnumerator
-        System.Collections.IEnumerable.GetEnumerator()
+        
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
         return GetEnumerator();
         }

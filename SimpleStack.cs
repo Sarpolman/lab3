@@ -9,7 +9,7 @@ namespace lab3{
     public class SimpleStack<T>:SimpleList<T> where T: IComparable{
         public void push(T element)
         {
-        Add(element);
+            this.Add(element);
         }
         
         public T pop(){
