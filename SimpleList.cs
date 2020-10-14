@@ -59,6 +59,16 @@ namespace lab3{
         {
         return GetEnumerator();
         }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            SimpleListItem<T> current =this.first;
+
+            while (current!= null){
+                yield return current.data;
+                current=current.next;
+            }
+        }
         public void Sort()
         {
         Sort(0, this.Count - 1);
@@ -89,16 +99,6 @@ namespace lab3{
         ci.data = cj.data;
         cj.data = temp;
         }
-        public IEnumerator<T> GetEnumerator()
-        {
-            SimpleListItem<T> current =this.first;
-
-            while (current!= null){
-                yield return current.data;
-                current=current.next;
-            }
-        }
-        
 
     }
 }
